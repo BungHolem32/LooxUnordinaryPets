@@ -38,57 +38,52 @@
   </div>
 </template>
 
-
 <script>
-import axios from "axios";
+import axios from 'axios'
 
 export default {
-  name: "PetsIndex",
-  data() {
+  name: 'PetsIndex',
+  data () {
     return {
       pets: [],
       selectedPetIndex: 1,
       selectedPet: {
-        id: "1",
-        name: "No Pet",
+        id: '1',
+        name: 'No Pet',
         content: {
-          highlight: "lorem ipsom",
-          description: " delor.",
-          carring_for_pet: "no content",
-          is_this_pet_right_for_you: "no content"
+          highlight: 'lorem ipsom',
+          description: ' delor.',
+          carring_for_pet: 'no content',
+          is_this_pet_right_for_you: 'no content'
         },
-        image_url: "no content",
-        image_url_hd: "no content"
+        image_url: 'no content',
+        image_url_hd: 'no content'
       },
       readmore: false
-    };
+    }
   },
-  mounted() {
+  mounted () {
     this.getPets().then(res => {
-      let pets = res.data;
-      this.selectedPet = pets[0];
-      this.pets = pets;
-    });
+      let pets = res.data
+      this.selectedPet = pets[0]
+      this.pets = pets
+    })
   },
   methods: {
-    toggleReadMore() {
-      this.readmore = !this.readmore;
+    toggleReadMore () {
+      this.readmore = !this.readmore
     },
-    updateSelectedPet(id) {
-      let pet = this.pets.filter(pet => pet.id == id);
+    updateSelectedPet (id) {
+      let pet = this.pets.filter(pet => pet.id === id);
       this.selectedPetIndex = id;
-      this.selectedPet = Object.assign({}, this.selectedPet, pet[0]);
+      this.selectedPet = Object.assign({}, this.selectedPet, pet[0])
     },
-    getPets() {
-      return axios.get("http://localhost:3000/pets");
-    },
-    blurImage() {
-      return selectedPetIndex == this.SelectedPet.id;
+    getPets () {
+      return axios.get('http://localhost:3000/pets')
     }
   }
-};
+}
 </script>
-
 
 <style scoped>
 .wrapper {
