@@ -39,50 +39,50 @@
 </template>
 
 <script>
-  import axios from 'axios';
+import axios from 'axios'
 
-  export default {
-    name: 'PetsIndex',
-    data() {
-      return {
-        pets: [],
-        selectedPetIndex: 1,
-        selectedPet: {
-          id: '1',
-          name: 'No Pet',
-          content: {
-            highlight: 'lorem ipsom',
-            description: ' delor.',
-            carring_for_pet: 'no content',
-            is_this_pet_right_for_you: 'no content',
-          },
-          image_url: 'no content',
-          image_url_hd: 'no content',
+export default {
+  name: 'PetsIndex',
+  data () {
+    return {
+      pets: [],
+      selectedPetIndex: 1,
+      selectedPet: {
+        id: '1',
+        name: 'No Pet',
+        content: {
+          highlight: 'lorem ipsom',
+          description: ' delor.',
+          carring_for_pet: 'no content',
+          is_this_pet_right_for_you: 'no content'
         },
-        readmore: false,
-      };
-    },
-    mounted() {
-      this.getPets().then(res => {
-        let pets = res.data.data;
-        this.selectedPet = pets[0];
-        this.pets = pets;
-      });
-    },
-    methods: {
-      toggleReadMore() {
-        this.readmore = !this.readmore;
+        image_url: 'no content',
+        image_url_hd: 'no content'
       },
-      updateSelectedPet(id) {
-        let pet = this.pets.filter(pet => pet.id === id);
-        this.selectedPetIndex = id;
-        this.selectedPet = Object.assign({}, this.selectedPet, pet[0]);
-      },
-      getPets() {
-        return axios.get('http://localhost:3000/pets');
-      },
+      readmore: false
+    }
+  },
+  mounted () {
+    this.getPets().then(res => {
+      let pets = res.data.data
+      this.selectedPet = pets[0]
+      this.pets = pets
+    })
+  },
+  methods: {
+    toggleReadMore () {
+      this.readmore = !this.readmore
     },
-  };
+    updateSelectedPet (id) {
+      let pet = this.pets.filter(pet => pet.id === id)
+      this.selectedPetIndex = id
+      this.selectedPet = Object.assign({}, this.selectedPet, pet[0])
+    },
+    getPets () {
+      return axios.get('http://localhost:3000/pets')
+    }
+  }
+}
 </script>
 
 <style scoped>

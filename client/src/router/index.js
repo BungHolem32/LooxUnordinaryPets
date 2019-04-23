@@ -1,20 +1,20 @@
-import Vue from 'vue';
-import Router from 'vue-router';
-import Pets from '@/components/Pets';
+import Vue from 'vue'
+import Router from 'vue-router'
+import Pets from '@/components/Pets'
 
-Vue.use(Router);
+Vue.use(Router)
 
 export default new Router({
   mode: 'history',
   routes: [
     {
       path: '/',
-      redirect: '/pets',
+      redirect: '/pets'
     },
     {
       path: '/pets',
       name: 'PetsIndex',
-      component: Pets,
-    },
-  ],
-});
+      component: Pets
+    }
+  ]
+})
