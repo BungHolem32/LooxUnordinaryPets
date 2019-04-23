@@ -25,7 +25,7 @@
         </div>
       </div>
       <div class="sidebar">
-        <div v-for="pet in pets" class="pet" :key="pet.id" @click="updateSelectedPet(pet.id)">
+        <div v-for="pet in pets" class="pet" :key="pet.id" @click="updateSelectedPet(pet.id)"  :class="{readmore:readmore}">
           <img
             :src="pet.image_url"
             alt="pet image"
@@ -88,6 +88,8 @@ export default {
 <style scoped>
 .wrapper {
   font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-flow: column;
 }
 .container-flex {
   display: flex;
@@ -170,7 +172,7 @@ export default {
 }
 
 .sidebar .pet img {
-  max-height: 80px;
+  max-height: 65px;
   padding: 3px;
   margin: 6px;
   border-radius: 12px;
@@ -204,6 +206,19 @@ export default {
 .sidebar .pet .selected_image {
   opacity: 0.6;
   zoom: 0.9;
+}
+
+.pet.readmore{
+  flex-flow: column-reverse;
+  align-items: center;
+  align-content: center;
+}
+.pet.readmore img{
+  max-height: 85px;
+}
+
+.pet.readmore h4{
+  margin: 12px;
 }
 
 @media (max-width: 1000px) {
