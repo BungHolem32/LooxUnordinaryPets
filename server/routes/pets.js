@@ -1,14 +1,20 @@
-var express = require("express");
+var express = require('express');
 var router = express.Router();
-var petsList = require("../data/pets.json");
+var petsList = require('../data/pets.json');
 
 /* GET Pets List. */
-router.get("/", function(req, res, next) {
+router.get('/', function(req, res, next) {
   res.json(petsList);
 });
 
-// Another option displaying in jade template
+/* GET Specific pet. */
+router.get('/:id', function(req, res, next) {
+  let id = req.params.id;
+  let pet = petsList.filter((pet) => pet.id === id);
+  res.json(pet[0]);
+});
 
+// Another option displaying in jade template
 // /* GET Pets List. */
 // router.get("/", function(req, res, next) {
 //   res.render("index", {
