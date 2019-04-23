@@ -15,7 +15,7 @@ It was built on Vue Framework at the front and expressJs in the back.
 
 #### Installation:
 	
- - clone project https://github.com/BungHolem32/LooxUnorendaryPets.git
+ - clone project https://github.com/BungHolem32/LooxUnordinaryPets.git
  - open terminal
  - cd into project-folder cd `projectFolder`
  - cd into client folder -> `cd client`
