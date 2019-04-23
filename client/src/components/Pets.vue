@@ -14,7 +14,7 @@
               <span>{{selectedPet.content.description}}</span>
               <h4>Carring out pet</h4>
               <p>{{selectedPet.content.carring_for_pet}}</p>
-              <h4>Is this pet right for you</h4>
+              <h4>Is this pet right for you?</h4>
               <p>{{selectedPet.content.is_this_pet_right_for_you}}</p>
             </template>
           </p>
@@ -102,7 +102,7 @@ export default {
 
 .selected_pet {
   display: flex;
-  flex: 3;
+  flex: 4;
   max-width: 1200px;
   padding: 12px;
   background: linear-gradient(to right, #79747491, white, #d2d2d28a);
@@ -170,7 +170,7 @@ export default {
 }
 
 .sidebar .pet img {
-  height: 120px;
+  max-height: 80px;
   padding: 3px;
   margin: 6px;
   border-radius: 12px;
@@ -232,8 +232,9 @@ export default {
   }
 
   .sidebar .pet img {
-    height: 240px;
+    max-height: 220px;
     padding: 10px;
+    margin-top: 24px;
     border-radius: 12px;
   }
 
