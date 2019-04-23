@@ -1,26 +1,26 @@
 <template>
   <div class="wrapper">
-    <h1>UNORDINARY PETS</h1>
+    <h1 class="uppercase">unordinary pets</h1>
     <div class="container-flex">
       <div class="selected_pet" :class="{columnFlex: readmore}">
         <div class="image">
           <img :src="selectedPet.image_url_hd" alt="pet image">
         </div>
         <div class="content">
-          <h2 class="title">{{selectedPet.name}}</h2>
+          <h2 class="title uppercase">{{selectedPet.name}}</h2>
           <p>
             {{selectedPet.content.highlight}}
             <template v-if="readmore">
               <span>{{selectedPet.content.description}}</span>
-              <h4>Carring out pet</h4>
+              <h4 class="uppercase">Carring out pet</h4>
               <p>{{selectedPet.content.carring_for_pet}}</p>
-              <h4>Is this pet right for you?</h4>
+              <h4 class="uppercase">Is this pet right for you?</h4>
               <p>{{selectedPet.content.is_this_pet_right_for_you}}</p>
             </template>
           </p>
           <a class="readMoreBtn" @click="toggleReadMore">
-            <template v-if="readmore">Read Less...</template>
-            <template v-else>Read more...</template>
+            <template v-if="readmore">READ LESS...</template>
+            <template v-else>READ MORE...</template>
           </a>
         </div>
       </div>
@@ -87,9 +87,8 @@ export default {
 
 <style scoped>
 .wrapper {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
-
 .container-flex {
   display: flex;
   max-width: 1200px;
@@ -118,6 +117,7 @@ export default {
   flex-flow: column;
   background: linear-gradient(to left, #79747491, white, #d2d2d28a);
   box-shadow: 4px 9px 12px 1px #989090;
+  min-width: 210px;
 }
 
 .selected_pet > .image {
@@ -195,6 +195,10 @@ export default {
 
 .columnFlex {
   flex-flow: column wrap;
+}
+
+.uppercase{
+  text-transform: uppercase;
 }
 
 .sidebar .pet .selected_image {
