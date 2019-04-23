@@ -1,4 +1,4 @@
-# Loox Unorendary Pets
+# Loox Unordinary Pets
 
 #### Why?
 
