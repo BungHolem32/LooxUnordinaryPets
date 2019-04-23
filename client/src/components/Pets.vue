@@ -18,7 +18,7 @@
               <p>{{selectedPet.content.is_this_pet_right_for_you}}</p>
             </template>
           </p>
-          <a class="readmoreBtn" @click="toggleReadMore">
+          <a class="readMoreBtn" @click="toggleReadMore">
             <template v-if="readmore">Read Less...</template>
             <template v-else>Read more...</template>
           </a>
@@ -145,7 +145,7 @@ export default {
   text-align: left;
 }
 
-.selected_pet > .content > .readmoreBtn {
+.selected_pet > .content > .readMoreBtn {
   align-self: flex-end;
   cursor: pointer;
   color: green;
