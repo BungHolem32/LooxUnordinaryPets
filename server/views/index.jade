@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1= title
+  .container
+    .selected-pet-container
+      image(class='selected_pet_image' src=currentPet.image_url_hd alt='current_pet_image_url')
+      .content
+        h2=currentPet.name
+        p=currentPet.description
+        a.read_more(href="/pets/"+currentPet.id) Read more...
+    .sidebar
+     each pet in pets
+       .sidebar_pet(data_id=pet.id)
+         image(class='sidebar_pet_image',src=pet.image_url,alt='pet_image_url',onclick='changeImage(' + pet.id + ')')
+         h4(class='sidebar_pet_name')=pet.name
+       
+    

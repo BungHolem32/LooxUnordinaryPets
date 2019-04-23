@@ -1,0 +1,93 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00b7ff;
+}
+
+/* WRAPPER */
+.container {
+  max-width: 1200px;
+  display: flex;
+  min-height: 490px;
+  flex-flow: row wrap;
+}
+
+/* SIDEBAR  */
+.sidebar {
+  flex: 1;
+  margin-left: 6px;
+  border: 1px solid #f1f1f1;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+  box-shadow: 2px 2px 4px 3px #efeeee;
+}
+
+.sidebar .sidebar_pet {
+  display: flex;
+  border: 1px solid #f1f1f1;
+  margin: 6px;
+  border-radius: 3px;
+  box-shadow: 2px 2px 2px 2px #efeeee;
+}
+
+.sidebar .sidebar_pet_image {
+  flex: 1;
+  max-height: 80px;
+  margin: 6px;
+  border-radius: 3px;
+  box-shadow: 1px 2px 5px 1px #d8cea0;
+}
+
+.sidebar .sidebar_pet_name {
+  flex: 2;
+  margin: 6px;
+}
+
+.selected-pet-container {
+  flex: 4;
+  margin-right: 6px;
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+  border: 1px solid #f1f1f1;
+  box-shadow: 2px 2px 4px 3px #efeeee;
+}
+
+.selected-pet-container .image {
+  flex: 1;
+  margin: 6px 3px 6px 0;
+  border: 1px solid #8c8383;
+  box-shadow: 1px 2px 5px 1px #89561f;
+}
+
+.selected-pet-container .content {
+  flex: 3;
+  margin: 6px 12px 6px 12px;
+  display: flex;
+  flex-flow: column;
+  height: 65%;
+}
+
+.selected-pet-container .selected_pet_image {
+  max-height: 350px;
+  border-radius: 6px;
+  border: 1px solid #8c8383;
+  box-shadow: 1px 2px 5px 1px #89561f;
+}
+
+.read_more {
+  align-self: flex-end;
+  cursor: pointer;
+  color: #5b6329;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.content h2 {
+  margin-top: 0;
+  color: #a26539;
+}
