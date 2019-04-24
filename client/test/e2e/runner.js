@@ -1,4 +1,4 @@
-// 1. start the dev server using production config
+// 1. start the dev server3 using production config
 process.env.NODE_ENV = 'testing'
 
 const webpack = require('webpack')
