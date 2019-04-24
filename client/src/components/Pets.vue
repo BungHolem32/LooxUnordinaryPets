@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <h1 class="uppercase">unordinary pets</h1>
-    <div class="container-flex">
+    <div class="container-flex" ref="container">
       <div class="selected_pet" :class="{columnFlex: readmore}">
         <div class="image">
           <img :src="selectedPet.image_url_hd" alt="pet image">
@@ -74,9 +74,11 @@ export default {
       this.readmore = !this.readmore
     },
     updateSelectedPet (id) {
-      let pet = this.pets.filter(pet => pet.id === id)
-      this.selectedPetIndex = id
-      this.selectedPet = Object.assign({}, this.selectedPet, pet[0])
+      this.selectedPetIndex = id - 1
+      this.selectedPet = Object.assign({}, this.selectedPet, this.pets[id - 1])
+      window.scrollTo({top: 100,
+        left: 100,
+        behavior: 'smooth'})
     },
     getPets () {
       return axios.get('http://localhost:3000/pets')
@@ -225,13 +227,13 @@ export default {
     .selected_pet {
       flex-flow: column;
     }
+
   }
 
   @media (max-width: 800px) {
     .container-flex {
       flex-flow: column wrap;
       align-content: space-between;
-      align-content: center;
     }
 
     .selected_pet {
