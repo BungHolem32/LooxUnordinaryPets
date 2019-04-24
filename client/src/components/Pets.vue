@@ -139,8 +139,8 @@ export default {
   }
 
   .selected_pet > .content {
-    flex: 2;
-    margin-left: 12px;
+    flex: 3;
+    margin: 12px;
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
